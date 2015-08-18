@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (1.3.0)
+  - CCNStatusItem (0.3.1)
+  - DateTools (1.6.1)
+  - ObjectMapper (0.15)
+  - OMGHTTPURLRQ (2.1.3):
+    - OMGHTTPURLRQ/RQ (= 2.1.3)
+  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
+  - OMGHTTPURLRQ/RQ (2.1.3):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (2.1.3)
+  - PromiseKit (2.2.1):
+    - PromiseKit/Foundation (= 2.2.1)
+    - PromiseKit/QuartzCore (= 2.2.1)
+    - PromiseKit/UIKit (= 2.2.1)
+  - PromiseKit/CorePromise (2.2.1)
+  - PromiseKit/Foundation (2.2.1):
+    - OMGHTTPURLRQ (~> 2.1.3)
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (2.2.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (2.2.1):
+    - PromiseKit/CorePromise
+  - XCGLogger (2.1.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 1.3)
+  - CCNStatusItem
+  - DateTools (~> 1.6.1)
+  - ObjectMapper (~> 0.15)
+  - PromiseKit (~> 2.0)
+  - XCGLogger (~> 2.1.1)
+
+SPEC CHECKSUMS:
+  Alamofire: 220403a8d5840e0b4c946a6fbaf209dbca124282
+  CCNStatusItem: 08cf5e641bbd50025b15fa2a1ba871726cebd98d
+  DateTools: 9bcc89e4f2f9004d8a7a2bd1b49269cf78968e65
+  ObjectMapper: 0656dc1c155825897e5acfcd25362c6b61786dcb
+  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
+  PromiseKit: 9c92257e39abf4b634533d44268592dfc6e4b5c2
+  XCGLogger: 8df921bcf88abbd511b887c8febde8163d624d81
+
+COCOAPODS: 0.38.2

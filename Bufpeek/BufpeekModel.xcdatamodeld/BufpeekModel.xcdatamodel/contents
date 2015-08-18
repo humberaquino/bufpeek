@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CDProfile" representedClassName="CDProfile" syncable="YES">
+        <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="coverPhoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="defaultProfile" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="disconnected" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="service" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceUsername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timezone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="updates" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="CDUpdate" inverseName="parentProfile" inverseEntity="CDUpdate" syncable="YES"/>
+    </entity>
+    <entity name="CDUpdate" representedClassName="CDUpdate" syncable="YES">
+        <attribute name="clientId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="day" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dueAt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scheduledAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sentAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serviceLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceUpdateId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sharedNow" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="via" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentProfile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDProfile" inverseName="updates" inverseEntity="CDProfile" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDUpdate" positionX="-63" positionY="-18" width="128" height="300"/>
+        <element name="CDProfile" positionX="-54" positionY="108" width="128" height="225"/>
+    </elements>
+</model>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="7706"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="OAuthViewController" customModule="Bufpeek" customModuleProvider="target">
+            <connections>
+                <outlet property="progressIndicator" destination="RwG-Rz-FvO" id="CIi-Qg-Hit"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="webView" destination="vEQ-qz-WIt" id="Hdv-CY-3ib"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="500"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYZ-lR-x4o">
+                    <rect key="frame" x="0.0" y="450" width="480" height="50"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vDZ-yv-kX5">
+                            <rect key="frame" x="14" y="8" width="72" height="32"/>
+                            <buttonCell key="cell" type="push" title="Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gfi-ru-YqF">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="backAction:" target="-2" id="KDK-Wi-Xd7"/>
+                            </connections>
+                        </button>
+                        <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="RwG-Rz-FvO">
+                            <rect key="frame" x="444" y="17" width="16" height="16"/>
+                        </progressIndicator>
+                    </subviews>
+                </customView>
+                <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vEQ-qz-WIt">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="450"/>
+                    <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12">
+                        <nil key="identifier"/>
+                    </webPreferences>
+                </webView>
+            </subviews>
+        </customView>
+    </objects>
+</document>
