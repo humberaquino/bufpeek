@@ -38,6 +38,7 @@ It's been said that there is always space for improvement, so here is a list of 
 
 ## Features
 
+* Add an application icon and change the current status bar icon
 * Notification when an update is posted
 * Widget with a summary of Today's updates
 * Show a detail of an update 
