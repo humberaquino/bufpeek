@@ -26,11 +26,11 @@ public class UpdatesManager {
     public var filteredUpdates: [UpdateDAO] {
         return updates.filter { (update) -> Bool in
             
-            if !contains(self.updateTypeFilter, update.updateType!) {
+            if !self.updateTypeFilter.contains(update.updateType!) {
                 return false
             }
            
-            if !contains(self.serviceIdFilter, update.profileService!) {
+            if !self.serviceIdFilter.contains(update.profileService!) {
                 return false
             }
             
@@ -63,7 +63,7 @@ public class UpdatesManager {
             }
         }
         
-        var total = pending + sent
+        let total = pending + sent
         if total == 0 {
             return 1.0
         }

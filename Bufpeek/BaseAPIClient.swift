@@ -1,7 +1,6 @@
 import Foundation
 import Alamofire
 import ObjectMapper
-import BufpeekKit
 import PromiseKit
 
 
@@ -40,7 +39,7 @@ public class BaseAPIClient {
             
             when(sentUpdatePromiseList).then { result in
                 fulfill(result)
-            }.catch { error in
+            }.report { error in
                 reject(error)
             }
         }
@@ -61,7 +60,7 @@ public class BaseAPIClient {
             
             when(pendingUpdatePromiseList).then { result in
                 fulfill(result)
-            }.catch { error in
+            }.report { error in
                 reject(error)
             }
         }
@@ -182,30 +181,34 @@ public class BaseAPIClient {
         
         let encoding = Alamofire.ParameterEncoding.URL
         Alamofire.request(.POST, url, parameters: parameters, encoding: encoding, headers: nil).responseJSON {
-            (request, response, json, error) in
-            if let error = error {
-                println("Error in auth: \(error.localizedDescription)")
+            response in
+            
+            
+            
+            switch response.result {
+            case .Success:
+                var error: NSError? = nil
+                if let jsonDict = response.result.value as? NSDictionary {
+                    if let accessToken = jsonDict["access_token"] as? String {
+                        // Success
+                        
+                        completionHandler(accessToken: accessToken, error: nil)
+                        return
+                    } else {
+                        error = BufpeekError.accessTokenNotFoundInResponse(jsonDict)
+                    }
+                } else {
+                    error = BufpeekError.responseDataNotJSON(response.result.error)
+                }
                 
+                // Error
+                completionHandler(accessToken: nil, error: error)
+            case .Failure(let error):
+                print(error)
                 completionHandler(accessToken: nil, error: error)
                 return
             }
-
-            var error: NSError? = nil
-            if let jsonDict = json as? NSDictionary {
-                if let accessToken = jsonDict["access_token"] as? String {
-                    // Success
-                
-                    completionHandler(accessToken: accessToken, error: nil)
-                    return
-                } else {
-                    error = BufpeekError.accessTokenNotFoundInResponse(jsonDict)
-                }
-            } else {
-                error = BufpeekError.responseDataNotJSON(json)
-            }
             
-            // Error
-            completionHandler(accessToken: nil, error: error)
         }
     }
     

@@ -31,7 +31,7 @@ class InitialViewController: NSViewController {
     }
     
     func showUpdatesIfTokenExists() {        
-        if let accessToken = UserSettings.sharedInstance().currentAccessToken() {
+        if let _ = UserSettings.sharedInstance().currentAccessToken() {
             // Token exists. Use updates view
             viewManager.showUpdatesViewController()
             return

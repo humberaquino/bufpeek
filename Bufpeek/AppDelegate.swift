@@ -44,10 +44,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }        
     
     private func setupLogging() {
-        logger.setup(logLevel: Config.Logger.LogLevel, showLogLevel: Config.Logger.ShowLogLevel, showFileNames: Config.Logger.ShowFileNames, showLineNumbers: Config.Logger.ShowLineNumbers, writeToFile: Config.Logger.WriteToFile, fileLogLevel: Config.Logger.FileLogLevel)
+        logger.setup(Config.Logger.LogLevel, showLogLevel: Config.Logger.ShowLogLevel, showFileNames: Config.Logger.ShowFileNames, showLineNumbers: Config.Logger.ShowLineNumbers, writeToFile: Config.Logger.WriteToFile, fileLogLevel: Config.Logger.FileLogLevel)
         
         // Setup to show only the time
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = Config.Logger.DateFormat
         dateFormatter.locale = NSLocale.currentLocale()
         logger.dateFormatter = dateFormatter

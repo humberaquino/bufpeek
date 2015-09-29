@@ -6,8 +6,8 @@ public class UpdateListDAO: Mappable {
     public var total: Int?
     public var updates: [UpdateDAO]?
     
-    public class func newInstance(map: Map) -> Mappable? {
-        return UpdateListDAO()
+    required public init?(_ map: Map) {
+        
     }
     
     public func mapping(map: Map) {

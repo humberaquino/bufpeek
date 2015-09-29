@@ -6,19 +6,20 @@ target :BufpeekKit do
   # Alamofire
   # Elegant HTTP Networking in Swift
   # https://github.com/Alamofire/Alamofire
-  pod 'Alamofire', '~> 1.3'
+  pod 'Alamofire', '~> 3.0.0-beta.3'
 
   # PromoseKit
   # Promises for iOS and OS X http://promisekit.org
   # https://github.com/mxcl/PromiseKit
-  pod "PromiseKit", "~> 2.0"
+  # Using the Swift 2.0 branch
+  pod 'PromiseKit', :git => 'https://github.com/mxcl/PromiseKit.git', :branch => 'swift-2.0-beta5'
 
 end
 
 # XCGLogger
 # A debug log framework for use in Swift projects.
 # https://github.com/DaveWoodCom/XCGLogger
-pod 'XCGLogger', '~> 2.1.1'
+pod 'XCGLogger', '~> 3.0'
 
 # CCNStatusItem
 # CCNStatusItem is a subclass of NSObject to act as a custom view for NSStatusItem
@@ -28,9 +29,9 @@ pod 'CCNStatusItem'
 # ObjectMapper
 # JSON Object mapping written in Swift
 # https://github.com/Hearst-DD/ObjectMapper
-pod 'ObjectMapper', '~> 0.15'
+pod 'ObjectMapper', '~> 0.17'
 
 # DateTools
 # Dates and times made easy in Objective-C
 # https://github.com/MatthewYork/DateTools
-pod 'DateTools', '~> 1.6.1'
+pod 'DateTools', '~> 1.7.0'

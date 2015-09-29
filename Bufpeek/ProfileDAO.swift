@@ -2,7 +2,7 @@ import ObjectMapper
 
 
 // Represents a single profile
-public class ProfileDAO: Mappable, Printable {
+public class ProfileDAO: Mappable, CustomStringConvertible {
     
     public var id: String?
     public var avatar: String?
@@ -17,8 +17,8 @@ public class ProfileDAO: Mappable, Printable {
     public var timezone: String?
 
     
-    public class func newInstance(map: Map) -> Mappable? {
-        return ProfileDAO()
+    required public init?(_ map: Map) {
+        
     }
     
     public func mapping(map: Map) {

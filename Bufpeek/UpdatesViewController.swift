@@ -107,7 +107,7 @@ class UpdatesViewController: NSViewController {
     func updateUICompleteIndicator() {
         let currentValue = updatesDataSource.currentUpdateProgressValue()
         completedProgressIndicator.doubleValue = currentValue
-        completedLabel.stringValue = NSString(format: "%.0f%%", currentValue*100.0) as! String
+        completedLabel.stringValue = NSString(format: "%.0f%%", currentValue*100.0) as String
     }
     
     func enableRefreshProgress(enable: Bool) {
@@ -184,12 +184,12 @@ class UpdatesViewController: NSViewController {
             self.updateUILastUpdate()
             // Mark as not running
             self.globalRefreshRunning = false
-        }.catch { error in
+        }.report { error in
             // Hide the progress
             self.enableRefreshProgress(false)
             // Show error
-            logger.error(error.localizedDescription)
-            self.showErrorMessage(true, msg: error.localizedDescription)
+            // FIXME: Error message
+            self.showErrorMessage(true, msg: "\(error)")
             self.updateUILastUpdate()
             self.globalRefreshRunning = false
         }

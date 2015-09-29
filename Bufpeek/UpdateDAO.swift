@@ -7,7 +7,7 @@ public enum UpdateType {
 }
 
 // Represents a single update
-public class UpdateDAO: Mappable, Printable {
+public class UpdateDAO: Mappable, CustomStringConvertible {
     
     public var clientId: String?
     public var createdAt: NSDate?
@@ -30,8 +30,12 @@ public class UpdateDAO: Mappable, Printable {
     public var retweetUsername: String?
     public var updateType: UpdateType?
 
-    public class func newInstance(map: Map) -> Mappable? {
-        return UpdateDAO()
+//    public class func newInstance(map: Map) -> Mappable? {
+//        return UpdateDAO()
+//    }
+    
+    required public init?(_ map: Map) {
+        
     }
     
     public func mapping(map: Map) {

@@ -34,14 +34,15 @@ class UpdatesDataSource: NSObject, NSTableViewDataSource, NSTableViewDelegate {
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let update = updatesManager.filteredUpdates[row]
-        if let identifier = tableColumn!.identifier {
-            if identifier == "UpdateTableCellView" {
-                if let cell = tableView.makeViewWithIdentifier(identifier, owner: self) as? UpdateTableCellView {
-                    cell.configureCellUsing(update)
-                    return cell
-                }
+        
+        let identifier = tableColumn!.identifier
+        if identifier == "UpdateTableCellView" {
+            if let cell = tableView.makeViewWithIdentifier(identifier, owner: self) as? UpdateTableCellView {
+                cell.configureCellUsing(update)
+                return cell
             }
         }
+        
         return nil
     }
 }

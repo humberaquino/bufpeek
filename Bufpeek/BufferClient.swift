@@ -1,4 +1,3 @@
-import BufpeekKit
 import PromiseKit
 import XCGLogger
 
@@ -51,8 +50,8 @@ public class BufferClient {
                 self.joinUpdatesAndFilter(pendingUpdatesList, sentUpdates: sentUpdatesList)
                 fulfill("Success")
             
-            }.catch { error in
-                println(error.localizedDescription)
+            }.report { error in
+                print(error)
                 reject(error)
             }
         }
@@ -83,7 +82,7 @@ public class BufferClient {
                         } else {
                             // Weird. This should not happend, right?
                             // Just skip
-                            println("WARN: A pending update without scheduled_at attribute")
+                            print("WARN: A pending update without scheduled_at attribute")
                         }
                     }
                     
@@ -102,7 +101,7 @@ public class BufferClient {
                     } else {
                         // Weird. This should not happend, right?
                         // Just skip
-                        println("WARN: A sent update without sent_at attribute")
+                        print("WARN: A sent update without sent_at attribute")
                     }
                 }
             }

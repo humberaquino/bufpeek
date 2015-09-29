@@ -9,7 +9,7 @@ Here is a summary of the features:
 
 * Update's list filter by status: Pending and sent.
 * Update's list filter by social network. E.g. Twitter, Facebook, etc.
-* Refreshes every 2 minutes 
+* Refreshes every 2 minutes
 * Force a a refresh
 * Support for dark and light menu bar themes
 
@@ -19,7 +19,7 @@ Clone this repo and go inside the directory using a terminal.
 Then, run the pod command:
 
     pod install
- 
+
 Open the project:
 
     open Bufpeek.xcworkspace
@@ -32,7 +32,7 @@ Run the project.
 The app fetches at most 100 pending updates and 100 sent updates per profile. This means that if the user has a profile with more than 100 pending or sent updates, the updates after the update number 100 won't be obtained.
 
 
-# Ideas for improvement 
+# Ideas for improvement
 
 It's been said that there is always space for improvement, so here is a list of things that could be added in future versions.
 
@@ -41,15 +41,15 @@ It's been said that there is always space for improvement, so here is a list of 
 * Add an application icon and change the current status bar icon
 * Notification when an update is posted
 * Widget with a summary of Today's updates
-* Show a detail of an update 
+* Show a detail of an update
 * Configure the update interval
 * Configure the date range for listing updates. E.g. last 3 days and the next 2 days
 
-## Code 
+## Code
 
-Improvements related to the code and the libraries used.
+Improvements related to the code and the libraries used:
 
-* Cancel promises and requests. 
+* Cancel promises and requests.
 * Add unit testing (I should have added this already :))
 * Functional test for API calls
 https://github.com/AliSoftware/OHHTTPStubs
@@ -59,13 +59,14 @@ https://github.com/AliSoftware/OHHTTPStubs
 
 The app uses CCNStatusItem which runs only on OS X 10.10. For this reason this project will run on this version and newer.
 
-This project is written in Swift 1.2 using Xcode 6.4.
+The current version is updated to Swift 2.0 and Xcode 7.0.
 
+# Known issues
+
+* UX: After a successful authentication the token provided is shown for a few seconds.
 
 # License and credits
 
 This project is created by Humberto Aquino ([@goku2](https://twitter.com/goku2) on Twitter) and is under the MIT license.
 
 Feedback is always welcome :D
-
-

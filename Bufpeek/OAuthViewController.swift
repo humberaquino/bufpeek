@@ -99,9 +99,9 @@ class OAuthViewController: NSViewController {
 
 // MARK: - WebFrameLoadDelegate informal Protocol
 
-extension OAuthViewController {
+extension OAuthViewController: WebFrameLoadDelegate {
     
-    override func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
+     func webView(sender: WebView!, didFinishLoadForFrame frame: WebFrame!) {
         enableProgressIndicator(false)
         
         if let dataSource = frame.dataSource {
@@ -137,12 +137,13 @@ extension OAuthViewController {
                         
                     } else {
                         // Error: Invalid title response
-                        logger.error("Invalid title: \(title)")
-                        let error = BufpeekError.authErrorWithMessage(title)
-                        delegate?.failedAuthWithMessage(error)
+//                        logger.error("Invalid title: \(title)")
+//                        let error = BufpeekError.authErrorWithMessage(title)
+//                        delegate?.failedAuthWithMessage(error)
                     }
                 } else {
                     // Error: No page title to get the code from
+                    // FIXME
                     logger.info("No title")
                     let error = BufpeekError.authErrorWithMessage("No title in response")
                     delegate?.failedAuthWithMessage(error)
@@ -158,13 +159,13 @@ extension OAuthViewController {
         }
     }
     
-    override func webView(sender: WebView!, didFailLoadWithError error: NSError!, forFrame frame: WebFrame!) {
+     func webView(sender: WebView!, didFailLoadWithError error: NSError!, forFrame frame: WebFrame!) {
         logger.error(error.localizedDescription)
         delegate?.failedAuthWithMessage(error)
         
     }
     
-    override func webView(sender: WebView!, didFailProvisionalLoadWithError error: NSError!, forFrame frame: WebFrame!) {
+     func webView(sender: WebView!, didFailProvisionalLoadWithError error: NSError!, forFrame frame: WebFrame!) {
         logger.error(error.localizedDescription)
         delegate?.failedAuthWithMessage(error)
     }
@@ -174,9 +175,9 @@ extension OAuthViewController {
 // MARK: - WebPolicyDelegate informal protocol
 // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/DisplayWebContent/Tasks/PolicyDecisions.html
 
-extension OAuthViewController {
+extension OAuthViewController: WebPolicyDelegate {
     
-    override func webView(webView: WebView!, decidePolicyForNavigationAction actionInformation: [NSObject : AnyObject]!, request: NSURLRequest!, frame: WebFrame!, decisionListener listener: WebPolicyDecisionListener!) {
+     func webView(webView: WebView!, decidePolicyForNavigationAction actionInformation: [NSObject : AnyObject]!, request: NSURLRequest!, frame: WebFrame!, decisionListener listener: WebPolicyDecisionListener!) {
         
         // Check if the navigation link is the redirect uri. This means that the
         // "No thanks" link was clicked and we should cancel the auth
