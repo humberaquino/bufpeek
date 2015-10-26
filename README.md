@@ -20,9 +20,16 @@ Then, run the pod command:
 
     pod install
 
+Create a FabricSetup file
+
+    cp FabricSetup-changeme FabricSetup
+    chmod u+x FabricSetup
+
 Open the project:
 
     open Bufpeek.xcworkspace
+
+Edit the file FabricSetup with your Fabric API key
 
 Run the project.
 

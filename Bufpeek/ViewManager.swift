@@ -82,7 +82,7 @@ extension ViewManager: OAuthViewControllerDelegate {
     }
     
     func cancelledAuth() {
-        let msg = "The authentication have been cancelled by the user"
+        let msg = "The authentication was canceled by the user"
         logger.info(msg)
         initialViewController.showErrorMessage(msg)
         showInitialViewController()

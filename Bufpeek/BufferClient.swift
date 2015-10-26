@@ -50,7 +50,7 @@ public class BufferClient {
                 self.joinUpdatesAndFilter(pendingUpdatesList, sentUpdates: sentUpdatesList)
                 fulfill("Success")
             
-            }.report { error in
+            }.error { error in
                 print(error)
                 reject(error)
             }

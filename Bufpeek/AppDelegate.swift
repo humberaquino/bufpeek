@@ -3,6 +3,9 @@ import Alamofire
 import CCNStatusItem
 import BufpeekKit
 import XCGLogger
+import Fabric
+import Crashlytics
+
 
 // Global buffer client
 var bufferClient: BufferClient!
@@ -21,6 +24,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: - NSApplicationDelegate
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
+        
+        // 0. Setup Fabric
+        Fabric.with([Crashlytics.self])
+        // Exception support: https://docs.fabric.io/osx/crashlytics/crashlytics.html
+        NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
         
         // 1. XCGLogger setup
         setupLogging()

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		575006BF1BDD629C00E71E68 /* FabricSetup in Resources */ = {isa = PBXBuildFile; fileRef = 575006BE1BDD629C00E71E68 /* FabricSetup */; };
+		575006C11BDE4E4300E71E68 /* CookieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575006C01BDE4E4300E71E68 /* CookieManager.swift */; };
 		575C126A1B757FD500BD8CB0 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C12691B757FD500BD8CB0 /* Config.swift */; };
 		575C12721B75874E00BD8CB0 /* InitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 575C12701B75874E00BD8CB0 /* InitialViewController.xib */; };
 		575C12791B7590E800BD8CB0 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575C12771B7590E800BD8CB0 /* OAuthViewController.swift */; };
@@ -37,8 +39,8 @@
 		57D4FC921B7FD5D2009FE6DC /* UpdatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4FC911B7FD5D2009FE6DC /* UpdatesManager.swift */; };
 		57EE792A1B822CEE0085CB55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE79291B822CEE0085CB55 /* Constants.swift */; };
 		57EE792E1B8234490085CB55 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 57EE792D1B8234490085CB55 /* LICENSE */; };
-		8511DFBD7779FF513E5ABD99 /* Pods_BufpeekKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F6210D6E792AA0ACCBF88D /* Pods_BufpeekKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F5928307F03396D7E46253B5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074707DE10E7C4F43F317641 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8511DFBD7779FF513E5ABD99 /* Pods_BufpeekKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F6210D6E792AA0ACCBF88D /* Pods_BufpeekKit.framework */; };
+		F5928307F03396D7E46253B5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074707DE10E7C4F43F317641 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		0ABCC7B96088C3EB22094BBB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B1CA9682BFB42ABED12496F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4329CB46843DB58525B7FB9C /* Pods-BufpeekKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BufpeekKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BufpeekKit/Pods-BufpeekKit.debug.xcconfig"; sourceTree = "<group>"; };
+		575006BE1BDD629C00E71E68 /* FabricSetup */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FabricSetup; sourceTree = "<group>"; };
+		575006C01BDE4E4300E71E68 /* CookieManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CookieManager.swift; sourceTree = "<group>"; };
 		575C12691B757FD500BD8CB0 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		575C12701B75874E00BD8CB0 /* InitialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InitialViewController.xib; sourceTree = "<group>"; };
 		575C12771B7590E800BD8CB0 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		57B5305B1B73E9EB007FA288 = {
 			isa = PBXGroup;
 			children = (
+				575006BE1BDD629C00E71E68 /* FabricSetup */,
 				57EE792D1B8234490085CB55 /* LICENSE */,
 				57A5E1FB1B796A6600751587 /* README.md */,
 				57B530661B73E9EB007FA288 /* Bufpeek */,
@@ -313,6 +318,7 @@
 		57EE792B1B822CF60085CB55 /* Utils and constants */ = {
 			isa = PBXGroup;
 			children = (
+				575006C01BDE4E4300E71E68 /* CookieManager.swift */,
 				576FE2331B7D649000709768 /* FoundationExtensions.swift */,
 				57EE79291B822CEE0085CB55 /* Constants.swift */,
 			);
@@ -449,6 +455,7 @@
 				575C12651B75782F00BD8CB0 /* Embed Frameworks */,
 				840CECC858BBD3489E16A139 /* Embed Pods Frameworks */,
 				4464AAB6E22ABC9561FEDE55 /* Copy Pods Resources */,
+				575006BD1BDD5BA000E71E68 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -550,6 +557,7 @@
 				57A5E1F71B79630400751587 /* UpdatesViewController.xib in Resources */,
 				575C127A1B7590E800BD8CB0 /* OAuthViewController.xib in Resources */,
 				57B5306C1B73E9EB007FA288 /* Images.xcassets in Resources */,
+				575006BF1BDD629C00E71E68 /* FabricSetup in Resources */,
 				575C12721B75874E00BD8CB0 /* InitialViewController.xib in Resources */,
 				57B5306F1B73E9EB007FA288 /* MainMenu.xib in Resources */,
 			);
@@ -594,6 +602,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		575006BD1BDD5BA000E71E68 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/FabricSetup\"";
 		};
 		58B4FCBB77C16F9B3B2EF3CF /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -676,6 +697,7 @@
 				579464301B7D13E700D4DD0A /* UpdateTableCellView.swift in Sources */,
 				57EE792A1B822CEE0085CB55 /* Constants.swift in Sources */,
 				576FE2341B7D649000709768 /* FoundationExtensions.swift in Sources */,
+				575006C11BDE4E4300E71E68 /* CookieManager.swift in Sources */,
 				5777DF7C1B8295C1000EF87B /* ViewManager.swift in Sources */,
 				575C12791B7590E800BD8CB0 /* OAuthViewController.swift in Sources */,
 				57A5E1F11B795FFB00751587 /* UserSettings.swift in Sources */,
@@ -901,7 +923,9 @@
 			baseConfigurationReference = 1B1CA9682BFB42ABED12496F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Bufpeek/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -917,6 +941,7 @@
 			baseConfigurationReference = 0ABCC7B96088C3EB22094BBB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Bufpeek/Info.plist;

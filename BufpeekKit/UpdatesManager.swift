@@ -6,6 +6,7 @@ public enum SocialService: String {
     case LinkedIn = "linkedin"
     case GPlus = "gplus"
     case Pinterest = "pinterest"
+    case TwitterRetweet = "retweet"
 }
 
 // Class responsible of filtering updates base on service and type criterias

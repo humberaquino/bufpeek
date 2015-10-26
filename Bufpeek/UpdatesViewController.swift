@@ -184,7 +184,7 @@ class UpdatesViewController: NSViewController {
             self.updateUILastUpdate()
             // Mark as not running
             self.globalRefreshRunning = false
-        }.report { error in
+        }.error { error in
             // Hide the progress
             self.enableRefreshProgress(false)
             // Show error

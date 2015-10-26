@@ -1,15 +1,19 @@
 PODS:
-  - Alamofire (3.0.0-beta.3)
+  - Alamofire (3.1.0)
   - CCNStatusItem (0.3.1)
+  - Crashlytics-OSX (3.3.4)
   - DateTools (1.7.0)
+  - Fabric-OSX (1.5.5):
+    - Fabric-OSX/Base (= 1.5.5)
+  - Fabric-OSX/Base (1.5.5)
   - ObjectMapper (0.17)
-  - OMGHTTPURLRQ (3.0.0):
-    - OMGHTTPURLRQ/RQ (= 3.0.0)
-  - OMGHTTPURLRQ/FormURLEncode (3.0.0)
-  - OMGHTTPURLRQ/RQ (3.0.0):
+  - OMGHTTPURLRQ (3.0.2):
+    - OMGHTTPURLRQ/RQ (= 3.0.2)
+  - OMGHTTPURLRQ/FormURLEncode (3.0.2)
+  - OMGHTTPURLRQ/RQ (3.0.2):
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (3.0.0)
+  - OMGHTTPURLRQ/UserAgent (3.0.2)
   - PromiseKit (3.0.0):
     - PromiseKit/Foundation (= 3.0.0)
     - PromiseKit/QuartzCore (= 3.0.0)
@@ -25,30 +29,24 @@ PODS:
   - XCGLogger (3.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0.0-beta.3)
+  - Alamofire (~> 3.1.0)
   - CCNStatusItem
+  - Crashlytics-OSX
   - DateTools (~> 1.7.0)
+  - Fabric-OSX
   - ObjectMapper (~> 0.17)
-  - PromiseKit (from `https://github.com/mxcl/PromiseKit.git`, branch `swift-2.0-beta5`)
+  - PromiseKit (~> 3.0)
   - XCGLogger (~> 3.0)
 
-EXTERNAL SOURCES:
-  PromiseKit:
-    :branch: swift-2.0-beta5
-    :git: https://github.com/mxcl/PromiseKit.git
-
-CHECKOUT OPTIONS:
-  PromiseKit:
-    :commit: 69ac5b07d92396108597da82f8c144e80a0f7f77
-    :git: https://github.com/mxcl/PromiseKit.git
-
 SPEC CHECKSUMS:
-  Alamofire: c89149e58431f6f94527e8c01f920456afe39bd0
+  Alamofire: 415bd7f56197722978759078486689f7ef913dce
   CCNStatusItem: 08cf5e641bbd50025b15fa2a1ba871726cebd98d
+  Crashlytics-OSX: bd34ff8cea31a8a707583f4de2f9aabdd98d4034
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Fabric-OSX: 4e9c65e093eaaa536c89e801ce20065c14d65f1b
   ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
-  OMGHTTPURLRQ: 45cd892e5643206a5a359307621df7678625ebec
-  PromiseKit: ca8e463ed27e3ab5d05ebeb237e4d50447822e4d
+  OMGHTTPURLRQ: 8376dc887d76a5a7e2a67881dc788f917a2f437c
+  PromiseKit: 665540a1eb43156446872dcf49ed7dee6ebbe13b
   XCGLogger: 5802533aff8bafc8b3b9776ab8972576f31d0a4e
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

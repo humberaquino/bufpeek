@@ -10,10 +10,9 @@ class UpdateTableCellView: NSTableCellView {
     @IBOutlet var typeTextField: NSTextField!
     @IBOutlet var serviceImageView: NSImageView!
     
-    func configureCellUsing(update: UpdateDAO) {
-        
+    func configureCellUsing(update: UpdateDAO) {        
         if let type = update.type {
-            if type == SocialService.Twitter.rawValue {
+            if type == SocialService.TwitterRetweet.rawValue {
                 textTextField.stringValue = update.retweetText!
                 typeTextField.stringValue = "\(type) from @\(update.retweetUsername!)"
             } else {

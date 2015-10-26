@@ -43,7 +43,7 @@ class OAuthViewController: NSViewController {
     // MARK: View life cycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()                        
         
         // 1. Setup delegate
         webView.policyDelegate = self
@@ -122,7 +122,7 @@ extension OAuthViewController: WebFrameLoadDelegate {
                         
                         // Success: 1/2
                         
-                        // Get the acces token
+                        // Get the access token
                         bufferClient.baseAPIClient.requestAccessToken(parts[1]) {
                             (accessToken, error) in
                             if let error = error {
@@ -145,8 +145,8 @@ extension OAuthViewController: WebFrameLoadDelegate {
                     // Error: No page title to get the code from
                     // FIXME
                     logger.info("No title")
-                    let error = BufpeekError.authErrorWithMessage("No title in response")
-                    delegate?.failedAuthWithMessage(error)
+//                    let error = BufpeekError.authErrorWithMessage("No title in response")
+//                    delegate?.failedAuthWithMessage(error)
                 }
                 
             } else {
@@ -160,14 +160,18 @@ extension OAuthViewController: WebFrameLoadDelegate {
     }
     
      func webView(sender: WebView!, didFailLoadWithError error: NSError!, forFrame frame: WebFrame!) {
-        logger.error(error.localizedDescription)
-        delegate?.failedAuthWithMessage(error)
+        if error.code != NSURLErrorCancelled {
+            logger.error(error.localizedDescription)
+            delegate?.failedAuthWithMessage(error)
+        }
         
     }
     
      func webView(sender: WebView!, didFailProvisionalLoadWithError error: NSError!, forFrame frame: WebFrame!) {
-        logger.error(error.localizedDescription)
-        delegate?.failedAuthWithMessage(error)
+        if error.code != NSURLErrorCancelled {
+            logger.error(error.localizedDescription)
+            delegate?.failedAuthWithMessage(error)
+        }
     }
 
 }

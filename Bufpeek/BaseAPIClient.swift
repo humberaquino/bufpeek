@@ -39,7 +39,7 @@ public class BaseAPIClient {
             
             when(sentUpdatePromiseList).then { result in
                 fulfill(result)
-            }.report { error in
+            }.error { error in
                 reject(error)
             }
         }
@@ -60,7 +60,7 @@ public class BaseAPIClient {
             
             when(pendingUpdatePromiseList).then { result in
                 fulfill(result)
-            }.report { error in
+            }.error{ error in
                 reject(error)
             }
         }

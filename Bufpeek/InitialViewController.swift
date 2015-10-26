@@ -4,6 +4,8 @@ import Alamofire
 // The view controller that is displayed whe n the user is not authenticated
 class InitialViewController: NSViewController {
 
+    @IBOutlet var optionsMenu: NSMenu!
+    
     static let ControllerName = "InitialViewController"
 
     let viewManager = ViewManager.sharedInstance()
@@ -55,4 +57,20 @@ class InitialViewController: NSViewController {
         errorLabel.hidden = true
     }
     
+    @IBAction func showOptionsMenu(sender: NSButton) {
+        NSMenu.popUpContextMenu(optionsMenu, withEvent: NSApplication.sharedApplication().currentEvent!, forView: sender)
+    }
+    
+    @IBAction func resetCookiesAction(sender: NSMenuItem) {
+    
+        // TODO: Ask to confirm
+        
+        CookieManager.sharedInstance().resetCookies()
+    }
+    
+    @IBAction func quitAction(sender: NSMenuItem) {
+        
+        logger.info("Quit")
+        NSApplication.sharedApplication().terminate(self)
+    }
 }
